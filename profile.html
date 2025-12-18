@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Profile</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+
+<body class="bg-black text-white d-flex justify-content-center align-items-center vh-100">
+
+<div class="p-4 border rounded" style="width:400px">
+  <h3 class="text-center mb-3">My Profile</h3>
+
+  <input type="text" id="name" class="form-control mb-2" placeholder="Full Name">
+  <input type="password" id="password" class="form-control mb-2" placeholder="New Password">
+  <textarea id="address" class="form-control mb-3" placeholder="Address"></textarea>
+
+  <button class="btn btn-warning w-100 mb-2" onclick="saveProfile()">Save Changes</button>
+  <button class="btn btn-secondary w-100" onclick="logout()">Logout</button>
+</div>
+
+<script>
+const user = JSON.parse(localStorage.getItem("loggedUser"));
+
+if (!user) {
+  window.location.href = "login.html";
+}
+
+document.getElementById("name").value = user.name || "";
+document.getElementById("address").value = user.address || "";
+
+function saveProfile() {
+  user.name = document.getElementById("name").value;
+  user.address = document.getElementById("address").value;
+
+  const newPass = document.getElementById("password").value;
+  if (newPass) user.password = newPass;
+
+  localStorage.setItem("loggedUser", JSON.stringify(user));
+
+  const users = JSON.parse(localStorage.getItem("users"));
+  const index = users.findIndex(u => u.email === user.email);
+  users[index] = user;
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Profile updated");
+}
+
+function logout() {
+  localStorage.removeItem("loggedUser");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

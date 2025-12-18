@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+</head>
+<body class="bg-black text-white d-flex justify-content-center align-items-center vh-100">
+
+  <div class="p-4 border rounded" style="width: 350px;">
+    <h3 class="text-center mb-3">Create Account</h3>
+
+    <input type="text" id="name" class="form-control mb-2" placeholder="Full Name">
+    <input type="email" id="email" class="form-control mb-2" placeholder="Email">
+    <input type="password" id="password" class="form-control mb-3" placeholder="Password">
+
+    <button class="btn btn-warning w-100" onclick="signup()">Sign Up</button>
+
+    <p class="text-center mt-3">
+      Already have an account?
+      <a href="login.html" class="text-warning">Login</a>
+    </p>
+  </div>
+
+<script>
+function signup() {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!name || !email || !password) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  if (users.find(u => u.email === email)) {
+    alert("Email already exists");
+    return;
+  }
+
+  users.push({ name, email, password });
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Account created successfully");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

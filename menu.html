@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menu - Golden Fork Restaurant</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Times New Roman", Times, serif;
+        background-color: black;
+        color: #d3d3d3;
+      }
+      .menu-container {
+        max-width: 900px;
+        margin: 40px auto;
+        background-color: #222222;
+        padding: 40px 60px;
+        box-sizing: border-box;
+      }
+      h1 {
+        text-align: center;
+        font-size: 48px;
+        margin-bottom: 6px;
+        color: #ff9f0f;
+        letter-spacing: 0.2em;
+      }
+      h2.restaurant-name {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 30px;
+        color: white;
+      }
+      h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        letter-spacing: 0.1em;
+        color: #ffc164;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 14px;
+        font-size: 18px;
+      }
+
+      .price {
+        min-width: 30px;
+        text-align: right;
+        color: #ff9f0f;
+      }
+      .bottom-image {
+        margin-top: 30px;
+        width: 100%;
+        height: 250px;
+        background-image: url("imgs/background-menu.webp");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .bottom-text {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: #cccccc;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+      }
+      .btn-home {
+        display: inline-block;
+        background-color: #ff9f0f;
+        color: black;
+        padding: 10px 20px;
+        margin: 20px auto 0 auto;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        text-align: center;
+      }
+      .btn-home:hover {
+        background-color: white;
+        color: black;
+      }
+      .btn-container {
+        text-align: center;
+      }
+      /* ///////////////////////////////////// */
+      /* start mobile media  */
+      @media (max-width: 576px) {
+        .menu-container {
+          padding: 20px 15px;
+          margin: 20px 10px;
+          max-width: 100%;
+        }
+        h1 {
+          font-size: 2.5rem;
+          letter-spacing: 0.1em;
+          margin-bottom: 10px;
+        }
+        h2.restaurant-name {
+          font-size: 1.2rem;
+          margin-bottom: 20px;
+        }
+        .menu-sections {
+          display: flex;
+          flex-direction: column;
+          padding-top: 0;
+        }
+        .section {
+          padding: 15px 10px !important;
+          margin-bottom: 20px;
+          width: 100% !important;
+        }
+        h3 {
+          font-size: 1.3rem;
+          margin-bottom: 15px;
+        }
+        ul li {
+          font-size: 1rem;
+          margin-bottom: 10px;
+          flex-wrap: wrap;
+        }
+        ul li .price {
+          min-width: 40px;
+          font-size: 1rem;
+        }
+        .bottom-image {
+          height: 180px;
+          margin-top: 20px;
+        }
+        btn-home {
+          font-size: 1rem;
+          padding: 10px 25px;
+          margin-top: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu-container bg-black">
+      <h1>MENU</h1>
+      <h2 class="restaurant-name pt-2">Golden Fork Restaurant</h2>
+
+      <div class="menu-sections row pt-5">
+        <div class="section col-md-6 p-5">
+          <h3>STEAK</h3>
+          <ul>
+            <li>Steak Sauce <span class="price">$40</span></li>
+            <li>Creamy Steak <span class="price">$35</span></li>
+            <li>Smoked Steak <span class="price">$40</span></li>
+          </ul>
+        </div>
+
+        <div class="section col-md-6 p-5">
+          <h3>SUSHI</h3>
+          <ul>
+            <li>Dragon Sushi <span class="price">$20</span></li>
+            <li>Creamy Sushi <span class="price">$25</span></li>
+            <li>Roll Salmon Sushi <span class="price">$18</span></li>
+          </ul>
+        </div>
+        <div class="section col-md-6 p-5">
+          <h3>PASTA</h3>
+          <ul>
+            <li>Spaghetti Carbonara <span class="price">$22</span></li>
+            <li>Lasagna <span class="price">$25</span></li>
+            <li>Fettuccine Alfredo <span class="price">$23</span></li>
+          </ul>
+        </div>
+
+        <div class="section col-md-6 p-5">
+          <h3>Latest Delights</h3>
+          <ul>
+            <li>Mushroom Quiche <span class="price">$22</span></li>
+            <li>Sweet Potato <span class="price">$18</span></li>
+            <li>Pasta Bolognese<span class="price">$20</span></li>
+            <li>Chickpea Curry <span class="price">$25</span></li>
+          </ul>
+        </div>
+
+        <div class="section col-md-6 p-5">
+          <h3>APPETIZER</h3>
+          <ul>
+            <li>Gourmet Bites <span class="price">$12</span></li>
+            <li>Tomato and Basil Bruschetta <span class="price">$14</span></li>
+            <li>Fried Calamari <span class="price">$12</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="bottom-image"></div>
+
+        <div class="btn-container">
+          <button class="btn-home" onclick="window.location.href='index.html'">
+            Back To Home
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
