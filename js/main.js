@@ -168,6 +168,26 @@ function logout() {
   alert("Logged out");
   window.location.href = "login.html";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const authLink = document.getElementById("auth-link");
+  const loggedUser = localStorage.getItem("loggedUser");
+
+  if (authLink) {
+    if (loggedUser) {
+      // User is logged in → show Logout
+      authLink.textContent = "Logout";
+      authLink.href = "#";
+      authLink.onclick = logout;
+    } else {
+      // No user → show Login
+      authLink.textContent = "Login";
+      authLink.href = "login.html";
+      authLink.onclick = null;
+    }
+  }
+});
+
 let orders = JSON.parse(localStorage.getItem("orders")) || [];
 orders.push({
   user: JSON.parse(localStorage.getItem("loggedUser")).email,
@@ -191,3 +211,4 @@ if (searchInput) {
     });
   });
 }
+
