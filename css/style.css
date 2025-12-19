@@ -40,7 +40,6 @@ header{
     font-family: serif;
     margin-bottom: 2rem;
 
-
 }
 .p-content{
     color: white;
@@ -57,7 +56,7 @@ header .my-btn{
 /* //////////////////////////////////////// */
 
 /* start Menu */
-.menu-container {
+/* .menu-container {
   max-width: 900px;
   margin: 40px auto;
   background-color: #222222;
@@ -139,7 +138,7 @@ header .my-btn{
 }
 .btn-container {
   text-align: center;
-}
+} */
 
 /* //////////////////////////////////////////////////////////////////// */
 
