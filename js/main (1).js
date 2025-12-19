@@ -111,9 +111,7 @@ document.querySelectorAll(".my-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     const parent = btn.closest(".col-md-3, .col-md-4");
     const name = parent.querySelector("h4").innerText;
-    const price = parent.querySelector("span")
-      ? parent.querySelector("span").innerText.replace("$","")
-      : 20;
+    const price = parent.querySelector("span") ? parent.querySelector("span").innerText.replace("$","")  : 20; // review
 
     const existing = cart.find(item => item.name === name);
 
